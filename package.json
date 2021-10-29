@@ -1,7 +1,6 @@
 {
   "name": "multitool-bot",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "prettier --write src/",
@@ -10,8 +9,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "glob": "^7.2.0",
     "mongoose": "^6.0.12",
     "ts-node-dev": "^1.1.8"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prince-walton/ghoul-TS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prince-walton/ghoul-TS/issues"
+  },
+  "homepage": "https://github.com/prince-walton/ghoul-TS#readme",
+  "description": ""
 }

@@ -8,8 +8,9 @@ import { Event } from '../interfaces/Client/IEvent';
 import { Command } from '../interfaces/Client/ICommand';
 import { Config } from '../interfaces/Client/IConfig';
 import { ClientSettings } from '../interfaces/Client/ISettings';
-import * as File from '../../settings.json';
+import { config as DotEnvConfig } from 'dotenv';
 import { connect as MongoConnect, ConnectOptions } from 'mongoose';
+DotEnvConfig();
 
 const globPromise: Function = promisify(Glob);
 
@@ -27,11 +28,11 @@ export class Bot extends Client {
     this.devs = settings.devs;
 
     if (settings.ready == true) {
-      this.start(File as Config);
+      this.start({ token: process.env.TOKEN, DBToken: process.env.DB_URL });
     }
 
     if (settings.database == true) {
-      this.base(File as Config);
+      this.base({ token: process.env.TOKEN, DBToken: process.env.DB_URL });
     }
   }
 
