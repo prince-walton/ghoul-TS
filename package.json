@@ -1,0 +1,17 @@
+{
+  "name": "multitool-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "prettier --write src/",
+    "start": "ts-node-dev --respawn --transpile-only --poll ./src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^7.2.0",
+    "mongoose": "^6.0.12",
+    "ts-node-dev": "^1.1.8"
+  }
+}
