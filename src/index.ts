@@ -1,7 +1,8 @@
-import { Intents, LimitedCollection, Collection } from 'discord.js';
-import { Bot } from './client/Client';
+import { Client, Intents, Collection, LimitedCollection } from 'discord.js';
+import { config as DotEnvConfig } from "dotenv";
+DotEnvConfig();
 
-new Bot(
+const client = new Client(
   {
     partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
     intents: [
@@ -16,5 +17,6 @@ new Bot(
       return new Collection();
     },
   },
-  { devs: ['761997174476111894'], database: true, ready: true },
 );
+
+client.login(process.env.TOKEN);
